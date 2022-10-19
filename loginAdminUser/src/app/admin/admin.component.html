@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+  <div class="container-fluid p-5 bg-success text-white text-center">
+    <h1>Admin Form</h1>
+  </div>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <form class="d-flex" style="width: 490px; margin-left: 500px;">
+        <input class="form-control me-1" type="search" placeholder="Search by User Name..." aria-label="Search" name="search" [(ngModel)]="search" (keyup)="search1()" >
+        <button class="btn btn-info" style="color:white" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form><br>
+
+        <div class="container-fluid">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th>Username</th><th>DOB</th><th>Gender</th><th>Blood group</th><th>Edit</th>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let u of userData | paginate:{itemsPerPage: 4, currentPage:curPage}">
+                      <td>{{u.username}}</td>
+                      <td>{{u.dob}}</td>
+                      <td>{{u.gender}}</td>
+                      <td>{{u.bloodGroup}}</td>
+                      <td>
+                        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="fnEdit(u)">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                      </td>
+                   </tr>
+                </tbody>   
+            </table> <br>
+            <div class="alert alert-danger" style="width:950px" *ngIf="searchNoRecords">
+              <strong>No matching records found !!!</strong>
+           </div> 
+            
+           <br><br>
+        </div>
+
+    </div>
+    <div class="col-md-2">
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog"  style="margin-top: 150px;">
+        <div class="modal-content" >
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="userEditForm">
+              <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="input" class="form-control" placeholder="Enter User Name" id="username" formControlName="username">
+              </div>
+              <div class="form-group">
+                <label for="dob">DOB:</label>
+                <input type="input" class="form-control" placeholder="Enter DOB" id="dob" formControlName="dob">
+              </div>
+              <div class="form-group">
+                <label for="gende">Gender:</label>
+                <div class="form-check">
+                  <input class="form-check-input" id="male" type="radio" value="male" name="gender" formControlName="gender">
+                  <label  class="form-check-label" for="male">Male</label>
+               </div>
+               <div  class="form-check">
+                  <input class="form-check-input" id="female" type="radio" value="female" name="gender" formControlName="gender">
+                  <label  class="form-check-label" for="female">Female</label>
+               </div>
+              </div>
+              <div class="form-group">
+                <label for="bloodGroup">Blood Group:</label>
+                <select class="select form-control" name="bloodGroup" formControlName="bloodGroup" placeholder="Choose Blood Group...">
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div><br>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</body>
+</html>

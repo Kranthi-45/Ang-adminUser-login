@@ -1,0 +1,27 @@
+th,td{
+    text-align: center;
+}
+thead{
+    background-color: rgba(16, 200, 126, 0.27);
+}
+table {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+.dropdown-toggle::after {
+    float: right;
+    margin-top: 10px;
+}
+.form-control {
+
+    -webkit-appearance: auto;
+    /* -moz-appearance: auto; */
+    appearance: auto
+}
+.form-check{
+    margin-left: 10px;
+}
+.pagination{
+    margin-left:300px
+}

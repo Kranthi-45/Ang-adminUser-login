@@ -1,0 +1,14 @@
+th,td{
+    text-align: center;
+}
+thead{
+    background-color: rgba(16, 200, 126, 0.27);
+}
+table {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+.pagination{
+    margin-left:300px
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+  <div class="container-fluid p-5 bg-success text-white text-center">
+    <h1>User Form</h1>
+  </div>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <form class="d-flex" style="width: 490px; margin-left: 500px;">
+          <input class="form-control me-1" type="search" placeholder="Search by User Name..." aria-label="Search" name="search" [(ngModel)]="search" (keyup)="search1()" >
+          <button class="btn btn-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form><br>
+
+        <div class="container-fluid">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th>Username</th><th>DOB</th><th>Gender</th><th>Blood group</th>
+                </thead>
+                <tbody >
+                   <tr *ngFor="let u of userData  | paginate:{itemsPerPage: 4, currentPage:curPage}" >
+                      <td>{{u.username}}</td>
+                      <td>{{u.dob}}</td>
+                      <td>{{u.gender}}</td>
+                      <td>{{u.bloodGroup}}</td>
+                   </tr>
+                </tbody>  
+            </table> <br>
+            <div class="alert alert-danger" style="width:950px" *ngIf="searchNoRecords">
+              <strong>No matching records found !!!</strong>
+            </div> 
+            <pagination-controls (pageChange)="curPage=$event" class="pagination" ></pagination-controls>
+            <br><br>
+          </div>
+          <br> <br>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+    
+</body>
+</html>

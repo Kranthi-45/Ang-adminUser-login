@@ -1,0 +1,84 @@
+{
+    "users": [
+      {
+        "username": "krantAdmin",
+        "password": "kumar",
+        "role": "admin",
+        "dob":"22-03-2022",
+        "gender":"male",
+        "bloodGroup": "A+"
+      },
+      {
+        "username": "rohit",
+        "password": "sharma",
+        "role": "user",
+        "dob":"22-01-2022",
+        "gender":"female",
+        "bloodGroup": "AB+"
+      },
+      {
+        "username": "ishan",
+        "password": "sky",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "O-"
+      },
+      {
+        "username": "pollard",
+        "password": "keiron",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "AB+"
+      },
+      {
+        "username": "hardik",
+        "password": "pandya",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "B-"
+      },
+      {
+        "username": "jasprit",
+        "password": "bumrah",
+        "role": "admin",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "AB-"
+      },
+      {
+        "username": "lasith",
+        "password": "maling",
+        "role": "admin",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "A-"
+      },
+      {
+        "username": "Tim",
+        "password": "david",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "AB-"
+      },
+      {
+        "username": "dewald",
+        "password": "brawis",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "AB-"
+      },
+      {
+        "username": "mayank",
+        "password": "markande",
+        "role": "user",
+        "dob":"22-11-2022",
+        "gender":"male",
+        "bloodGroup": "AB-"
+      }
+    ]
+}
